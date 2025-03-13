@@ -1,0 +1,124 @@
+/* --- Background --- */
+body {
+    background: linear-gradient(to right, #ffa726, #fef5e7, #b7d3c2, #5d8b72); /* Color palette applied */
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* --- Form Container --- */
+.form-container {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    width: 350px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* --- Headings --- */
+h2 {
+    color: #ffa726; /* Orange from palette */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* --- Form Inputs --- */
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #b7d3c2; /* Soft green border */
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+form input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 1px solid #5d8b72; /* Teal when focused */
+}
+
+/* --- Buttons --- */
+.play-btn, .math-button {
+    background: #ffa726;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease, transform 0.2s;
+}
+
+.play-btn:hover, .math-button:hover {
+    background: #ff9800;
+    transform: scale(1.05);
+}
+
+/* --- Score Tracker --- */
+.math-score {
+    font-size: 18px;
+    color: #5d8b72;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* --- Progress Bar --- */
+.math-progress-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 15px;
+}
+
+.math-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #ffa726;
+    transition: width 0.5s ease-in-out;
+}
+
+/* --- Messages --- */
+.math-message {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #5d8b72;
+    animation: popUp 0.5s ease;
+}
+
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .form-container, .math-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
